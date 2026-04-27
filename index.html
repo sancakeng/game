@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Doğru mu? Yanlış mı? - Piksel Bilgi Yarışması</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</head>
+<body>
+    <div class="game-container" id="game-box">
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1>DOĞRU MU?<br>YANLIŞ MI?</h1>
+            <p style="font-size: 0.6rem; line-height: 1.6;">Genel Kültür ve Matematik Soruları<br>3 Canın Var!</p>
+            <button class="btn btn-start" id="start-btn">BAŞLA</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="hidden">
+            <div class="stats-container">
+                <div id="score-display">PUAN: 0</div>
+                <div class="hearts" id="hearts-display">❤❤❤</div>
+            </div>
+            <div class="question-text" id="question-text">
+                Yükleniyor...
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-true" id="true-btn">DOĞRU</button>
+                <button class="btn btn-false" id="false-btn">YANLIŞ</button>
+            </div>
+            <div id="milestone-msg" class="milestone-msg hidden"></div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="hidden">
+            <h1>OYUN BİTTİ!</h1>
+            <div id="final-score" style="font-size: 1.2rem; color: #ffd700;">PUAN: 0</div>
+            <button class="btn btn-restart" id="restart-btn">TEKRAR DENE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
